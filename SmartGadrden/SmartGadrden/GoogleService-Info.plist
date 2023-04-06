@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>339962089936-hmut5robp9ljg920nndpqmlm0rq8kcqs.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.339962089936-hmut5robp9ljg920nndpqmlm0rq8kcqs</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBmXEorZtIRRHfaJEE69FUaN8E8ZwZ9ue8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>339962089936</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dtrognn.SmartGadrden</string>
+	<key>PROJECT_ID</key>
+	<string>vuon-thong-minh-6868</string>
+	<key>STORAGE_BUCKET</key>
+	<string>vuon-thong-minh-6868.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:339962089936:ios:15db4b7a1a716cf6e329d5</string>
+	<key>DATABASE_URL</key>
+	<string>https://vuon-thong-minh-6868-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

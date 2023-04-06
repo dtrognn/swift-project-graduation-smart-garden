@@ -1,0 +1,6 @@
+framework module Pods_SmartGadrden {
+  umbrella header "Pods-SmartGadrden-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -25,8 +25,14 @@ class SettingViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configValueDefaultSwitch()
         initDataModeFirebase()
+    }
+
+    private func configValueDefaultSwitch() {
+        buttonControlModeSwitch.isOn = false
+        appControlModeSwitch.isOn = false
+        automaticControlModeSwitch.isOn = false
     }
 
     override func configSubViews() {

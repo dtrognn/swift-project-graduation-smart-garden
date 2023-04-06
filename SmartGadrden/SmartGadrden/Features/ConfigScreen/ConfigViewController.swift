@@ -34,9 +34,16 @@ class ConfigViewController: BaseViewController {
                 self?.engineStates = data
                 self?.configCollectionView.reloadData()
             case .failure(let error):
-                print(error.localizedDescription)
+                self?.handleReadDateFailed(error)
             }
         }
+    }
+
+    private func handleReadDateFailed(_ error: Error) {
+        print(Self.self, #function, error.localizedDescription)
+        let cancelAction = UIAlertAction(title: "Đóng", style: .default)
+
+        showAlert(title: "Lấy dữ liệu thất bại", message: "Vui lòng kiểm tra lại đường truyền", actions: [cancelAction])
     }
 
     private func configCollectionView(_ collectionView: UICollectionView) {
@@ -100,7 +107,26 @@ extension ConfigViewController: UICollectionViewDataSource {
     }
 
     private func updateFirebaseData() {
-        writeDataToFirebase("TINHIEUDONGCO", engineStates)
+        writeDataToFirebase("TINHIEUDONGCO", engineStates) { [weak self] result in
+            switch result {
+            case .success:
+                self?.handleWriteDataSuccess()
+            case .failure(let error):
+                self?.handleWriteDataFailed(error)
+            }
+        }
+    }
+
+    private func handleWriteDataSuccess() {
+        let cancelAction = UIAlertAction(title: "Đóng", style: .default)
+
+        showAlert(title: "Thông báo", message: "Bật/tắt thiết thành công", actions: [cancelAction])
+    }
+
+    private func handleWriteDataFailed(_ error: Error) {
+        let cancelAction = UIAlertAction(title: "Đóng", style: .default)
+
+        showAlert(title: "Bật/tắt thiết bị thất bại", message: "", actions: [cancelAction])
     }
 }
 

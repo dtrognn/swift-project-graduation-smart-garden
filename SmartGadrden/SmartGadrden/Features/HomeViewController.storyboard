@@ -83,8 +83,11 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDt-RD-NJG">
+                                                    <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDt-RD-NJG">
                                                         <rect key="frame" x="284" y="14.666666666666657" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="handleSwitchChanged:" destination="B2R-tP-M0R" eventType="valueChanged" id="neU-tP-4VK"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -110,8 +113,11 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sWL-es-Mt1">
+                                                    <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sWL-es-Mt1">
                                                         <rect key="frame" x="284" y="14.666666666666657" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="handleSwitchChanged:" destination="B2R-tP-M0R" eventType="valueChanged" id="T0M-g1-36Z"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -137,8 +143,11 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UP6-UN-fh5">
+                                                    <switch opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UP6-UN-fh5">
                                                         <rect key="frame" x="284" y="14.666666666666686" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="handleSwitchChanged:" destination="B2R-tP-M0R" eventType="valueChanged" id="kSS-Nw-LJ6"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>

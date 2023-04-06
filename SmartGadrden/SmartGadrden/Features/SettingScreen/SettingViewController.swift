@@ -17,9 +17,9 @@ class SettingViewController: BaseViewController {
     @IBOutlet var appControlModeSwitch: UISwitch!
     @IBOutlet var automaticControlModeSwitch: UISwitch!
 
-    @IBOutlet weak var thresholdTemperatureTextField: UITextField!
-    @IBOutlet weak var thresholdSoilMostureTextField: UITextField!
-    @IBOutlet weak var thresholdLightTextField: UITextField!
+    @IBOutlet var thresholdTemperatureTextField: UITextField!
+    @IBOutlet var thresholdSoilMostureTextField: UITextField!
+    @IBOutlet var thresholdLightTextField: UITextField!
 
     static var workMode: String = ""
 
@@ -40,29 +40,25 @@ class SettingViewController: BaseViewController {
         fetchDataFromFirebase(atPath: "CHEDO", dataType: String.self) { [weak self] result in
             switch result {
             case .success(let data):
-                print(data)
-                Self.workMode = data
-                self?.handleWorkModeSwitch(Self.workMode)
+                Self.self.workMode = data
+                self?.handleAssignValueSwitch(Self.workMode)
             case .failure(let error):
-                print(error.localizedDescription)
+                self?.handleReadDateFailed(error)
             }
         }
     }
 
-    private func handleWorkModeSwitch(_ workmode: String) {
-        switch workmode {
-        case "1":
-            buttonControlModeSwitch.isOn = true
-            appControlModeSwitch.isOn = false
-            automaticControlModeSwitch.isOn = false
-        case "2":
-            buttonControlModeSwitch.isOn = false
-            appControlModeSwitch.isOn = true
-            automaticControlModeSwitch.isOn = false
-        default:
-            buttonControlModeSwitch.isOn = false
-            appControlModeSwitch.isOn = false
-            automaticControlModeSwitch.isOn = true
+    private func handleReadDateFailed(_ error: Error) {
+        print(Self.self, #function, error.localizedDescription)
+        let cancelAction = UIAlertAction(title: "Đóng", style: .default)
+
+        showAlert(title: "Lấy dữ liệu thất bại", message: "Vui lòng kiểm tra lại đường truyền", actions: [cancelAction])
+    }
+
+    private func handleAssignValueSwitch(_ workmode: String) {
+        let switches = [buttonControlModeSwitch, appControlModeSwitch, automaticControlModeSwitch]
+        for (index, control) in switches.enumerated() {
+            control?.isOn = ((index + 1) == Int(workmode) ?? switches.count - 1)
         }
     }
 }

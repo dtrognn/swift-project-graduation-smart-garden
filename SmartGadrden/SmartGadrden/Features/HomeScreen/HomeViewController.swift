@@ -8,7 +8,7 @@
 import FirebaseDatabase
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     @IBOutlet private var backgroundWeatherView: UIView!
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet var countryLabel: UILabel!
@@ -34,11 +34,13 @@ class HomeViewController: UIViewController {
 
         initDataFirebase()
 
-        backgroundWeatherView.roundCorners(with: 20)
-
         fetchDataFromAPI()
 
         configCollectionView(weatherCollectionView)
+    }
+
+    override func configSubViews() {
+        backgroundWeatherView.roundCorners(with: 20)
     }
 
     // MARK: - initDataFirebase
@@ -53,15 +55,22 @@ class HomeViewController: UIViewController {
                 self?.lightIntensity = "\(data.dropFirst(6).prefix(2))"
 
                 self?.parameterValues = ["\(self?.tempC ?? "")℃",
-                                        "\(self?.humidity ?? "")%",
-                                        "\(self?.soilMoisture ?? "")%",
-                                        "\(self?.lightIntensity ?? "")%"]
+                                         "\(self?.humidity ?? "")%",
+                                         "\(self?.soilMoisture ?? "")%",
+                                         "\(self?.lightIntensity ?? "")%"]
 
                 self?.weatherCollectionView.reloadData()
             case .failure(let error):
-                print("Error: \(error.localizedDescription)")
+                self?.handleReadDataFailed(error)
             }
         }
+    }
+
+    private func handleReadDataFailed(_ error: Error) {
+        print("Error: \(error.localizedDescription)")
+
+        let cancelAction = UIAlertAction(title: "Đóng", style: .destructive)
+        showAlert(title: "Lỗi", message: "Lấy dữ liệu không thành công", actions: [cancelAction])
     }
 
     // MARK: - configCollectionView

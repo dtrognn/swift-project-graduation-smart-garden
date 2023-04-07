@@ -74,7 +74,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fO-bA-6n8">
                                         <rect key="frame" x="20" y="50" width="353" height="70"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="39Q-KP-CGi">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="39Q-KP-CGi">
                                                 <rect key="frame" x="10" y="5" width="333" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chế độ điều khiển bằng nút bấm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMM-2R-I1W">
@@ -85,9 +85,6 @@
                                                     </label>
                                                     <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JDt-RD-NJG">
                                                         <rect key="frame" x="284" y="14.666666666666657" width="51" height="31"/>
-                                                        <connections>
-                                                            <action selector="handleSwitchChanged:" destination="B2R-tP-M0R" eventType="valueChanged" id="neU-tP-4VK"/>
-                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -104,7 +101,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7O-0q-7Ha">
                                         <rect key="frame" x="20" y="135" width="353" height="70"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6N6-3E-mDu">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6N6-3E-mDu">
                                                 <rect key="frame" x="10" y="5" width="333" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chế độ điều khiển bằng phần mềm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI9-zg-Soq">
@@ -115,9 +112,6 @@
                                                     </label>
                                                     <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sWL-es-Mt1">
                                                         <rect key="frame" x="284" y="14.666666666666657" width="51" height="31"/>
-                                                        <connections>
-                                                            <action selector="handleSwitchChanged:" destination="B2R-tP-M0R" eventType="valueChanged" id="T0M-g1-36Z"/>
-                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>
@@ -134,7 +128,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prb-6p-8Aw">
                                         <rect key="frame" x="20" y="220" width="353" height="70"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ish-AP-dNJ">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ish-AP-dNJ">
                                                 <rect key="frame" x="10" y="5" width="333" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chế độ điều tự động" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ0-LK-eay">
@@ -145,9 +139,6 @@
                                                     </label>
                                                     <switch opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UP6-UN-fh5">
                                                         <rect key="frame" x="284" y="14.666666666666686" width="51" height="31"/>
-                                                        <connections>
-                                                            <action selector="handleSwitchChanged:" destination="B2R-tP-M0R" eventType="valueChanged" id="kSS-Nw-LJ6"/>
-                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                             </stackView>

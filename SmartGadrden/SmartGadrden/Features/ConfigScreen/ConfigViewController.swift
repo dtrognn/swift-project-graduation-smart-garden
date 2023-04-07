@@ -11,6 +11,8 @@ import UIKit
 class ConfigViewController: BaseViewController {
     private var engineStates: String = "0000"
 
+    let setting = SettingViewController.self
+
     @IBOutlet var configCollectionView: UICollectionView!
 
     private let numberOfItemInRow: CGFloat = 1
@@ -21,16 +23,21 @@ class ConfigViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initDataEngineFirebase()
-
         configCollectionView(configCollectionView)
+
+        initDataEngineFirebase()
+    }
+
+    private func handleWorkModeDifference1() {
+        let cancelAction = UIAlertAction(title: "Đóng", style: .default)
+
+        showAlert(title: "Lỗi", message: "Hệ thống đang ở chế độ 1", actions: [cancelAction])
     }
 
     private func initDataEngineFirebase() {
         fetchDataFromFirebase(atPath: "TINHIEUDONGCO", dataType: String.self) { [weak self] result in
             switch result {
             case .success(let data):
-                print(data)
                 self?.engineStates = data
                 self?.configCollectionView.reloadData()
             case .failure(let error):

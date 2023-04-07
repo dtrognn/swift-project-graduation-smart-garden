@@ -21,7 +21,7 @@ class SettingViewController: BaseViewController {
     @IBOutlet var thresholdSoilMostureTextField: UITextField!
     @IBOutlet var thresholdLightTextField: UITextField!
 
-    static var workMode: String = "1"
+    private var workMode: String = "1"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +48,8 @@ class SettingViewController: BaseViewController {
         fetchDataFromFirebase(atPath: "CHEDO", dataType: String.self) { [weak self] result in
             switch result {
             case .success(let data):
-                Self.self.workMode = data
-                self?.handleAssignValueSwitch(Self.workMode)
+                self?.workMode = data
+                self?.handleAssignValueSwitch(self!.workMode)
             case .failure(let error):
                 self?.handleReadDateFailed(error)
             }

@@ -10,6 +10,7 @@ import UIKit
 
 class ConfigViewController: BaseViewController {
     private var engineStates: String = "0000"
+    private var workMode: String = "1"
 
     let setting = SettingViewController.self
 
@@ -25,14 +26,36 @@ class ConfigViewController: BaseViewController {
 
         configCollectionView(configCollectionView)
 
-        initDataEngineFirebase()
+        initDataWorkModeFirebase()
+    }
+
+    // MARK: - initDataWorkModeFirebase
+
+    private func initDataWorkModeFirebase() {
+        fetchDataFromFirebase(atPath: "CHEDO", dataType: String.self) { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.workMode = data
+
+                if self?.workMode != "1" {
+                    self?.initDataEngineFirebase()
+                } else {
+                    self?.handleWorkModeDifference1()
+                }
+            case .failure(let error):
+                self?.handleReadDataEngineFailed(error)
+            }
+            self?.configCollectionView.reloadData()
+        }
     }
 
     private func handleWorkModeDifference1() {
         let cancelAction = UIAlertAction(title: "Đóng", style: .default)
 
-        showAlert(title: "Lỗi", message: "Hệ thống đang ở chế độ 1", actions: [cancelAction])
+        showAlert(title: "Thông báo", message: "Không thể sử dụng chức năng này ở chế độ 1", actions: [cancelAction])
     }
+
+    // MARK: - initDataEngineFirebase
 
     private func initDataEngineFirebase() {
         fetchDataFromFirebase(atPath: "TINHIEUDONGCO", dataType: String.self) { [weak self] result in
@@ -41,12 +64,12 @@ class ConfigViewController: BaseViewController {
                 self?.engineStates = data
                 self?.configCollectionView.reloadData()
             case .failure(let error):
-                self?.handleReadDateFailed(error)
+                self?.handleReadDataEngineFailed(error)
             }
         }
     }
 
-    private func handleReadDateFailed(_ error: Error) {
+    private func handleReadDataEngineFailed(_ error: Error) {
         print(Self.self, #function, error.localizedDescription)
         let cancelAction = UIAlertAction(title: "Đóng", style: .default)
 
@@ -85,12 +108,19 @@ extension ConfigViewController: UICollectionViewDataSource {
 
         cell.bindData(indexPath)
 
-        let switchState = engineStates[engineStates.index(engineStates.endIndex, offsetBy: -(indexPath.row + 1))]
-        cell.equipmentSwitch.setOn(switchState == "1", animated: true)
+        if workMode != "1" {
+            cell.equipmentSwitch.isEnabled = true
 
-        cell.switchValueChangedHandler = { isOn in
-            self.handleSwitchChanged(indexPath.row, isOn)
-            self.updateFirebaseData()
+            let switchState = engineStates[engineStates.index(engineStates.endIndex, offsetBy: -(indexPath.row + 1))]
+            cell.equipmentSwitch.setOn(switchState == "1", animated: true)
+
+            cell.switchValueChangedHandler = { isOn in
+                self.handleSwitchChanged(indexPath.row, isOn)
+                self.updateFirebaseData()
+            }
+        } else {
+            cell.equipmentSwitch.isOn = false
+            cell.equipmentSwitch.isEnabled = false
         }
 
         return cell

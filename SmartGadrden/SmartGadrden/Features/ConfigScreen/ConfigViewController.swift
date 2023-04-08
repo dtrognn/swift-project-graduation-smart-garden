@@ -37,22 +37,16 @@ class ConfigViewController: BaseViewController {
             case .success(let data):
                 self?.workMode = data
 
-                if self?.workMode != "1" {
+                if self?.workMode != "1" && self?.workMode != "3" {
                     self?.initDataEngineFirebase()
                 } else {
-                    self?.handleWorkModeDifference1()
+                    print(Self.self, #function)
                 }
             case .failure(let error):
                 self?.handleReadDataEngineFailed(error)
             }
             self?.configCollectionView.reloadData()
         }
-    }
-
-    private func handleWorkModeDifference1() {
-        let cancelAction = UIAlertAction(title: "Đóng", style: .default)
-
-        showAlert(title: "Thông báo", message: "Không thể sử dụng chức năng này ở chế độ 1", actions: [cancelAction])
     }
 
     // MARK: - initDataEngineFirebase
@@ -108,7 +102,7 @@ extension ConfigViewController: UICollectionViewDataSource {
 
         cell.bindData(indexPath)
 
-        if workMode != "1" {
+        if workMode != "1" && workMode != "3" {
             cell.equipmentSwitch.isEnabled = true
 
             let switchState = engineStates[engineStates.index(engineStates.endIndex, offsetBy: -(indexPath.row + 1))]

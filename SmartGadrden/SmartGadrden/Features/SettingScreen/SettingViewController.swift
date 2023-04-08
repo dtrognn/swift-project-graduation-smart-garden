@@ -88,7 +88,7 @@ class SettingViewController: BaseViewController {
             writeDataToFirebase("CHEDO", "1") { [weak self] result in
                 switch result {
                 case .success:
-                    self?.handleWriteDataSuccessed(sender.tag)
+                    print(Self.self, #function)
                 case .failure(let error):
                     self?.handleWriteDataFailed(error)
                 }
@@ -100,7 +100,7 @@ class SettingViewController: BaseViewController {
             writeDataToFirebase("CHEDO", "2") { [weak self] result in
                 switch result {
                 case .success:
-                    self?.handleWriteDataSuccessed(sender.tag)
+                    print(Self.self, #function)
                 case .failure(let error):
                     self?.handleWriteDataFailed(error)
                 }
@@ -112,7 +112,7 @@ class SettingViewController: BaseViewController {
             writeDataToFirebase("CHEDO", "3") { [weak self] result in
                 switch result {
                 case .success:
-                    self?.handleWriteDataSuccessed(sender.tag)
+                    print(Self.self, #function)
                 case .failure(let error):
                     self?.handleWriteDataFailed(error)
                 }

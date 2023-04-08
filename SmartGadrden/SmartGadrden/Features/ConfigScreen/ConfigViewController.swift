@@ -37,7 +37,7 @@ class ConfigViewController: BaseViewController {
             case .success(let data):
                 self?.workMode = data
 
-                if self?.workMode != "1" && self?.workMode != "3" {
+                if self?.workMode != "1", self?.workMode != "3" {
                     self?.initDataEngineFirebase()
                 } else {
                     print(Self.self, #function)
@@ -83,6 +83,13 @@ class ConfigViewController: BaseViewController {
 extension ConfigViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
+
+        if indexPath.row == 1 {
+            let mainStoryboard = UIStoryboard(name: "HomeViewController", bundle: nil)
+            let configStoryboard = UIStoryboard(name: "ConfigViewController", bundle: nil)
+            let lampViewController = configStoryboard.instantiateViewController(withIdentifier: "LampViewController") as! LampViewController
+            mainStoryboard.instantiateViewController(withIdentifier: "TabBarController").navigationController?.pushViewController(lampViewController, animated: true)
+        }
     }
 }
 

@@ -17,6 +17,8 @@
 		6E09A72C29DAAD3500E3B7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E09A72B29DAAD3500E3B7E7 /* Assets.xcassets */; };
 		6E09A72F29DAAD3500E3B7E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E09A72D29DAAD3500E3B7E7 /* LaunchScreen.storyboard */; };
 		6E09A73729DAAD7600E3B7E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E09A73629DAAD7600E3B7E7 /* GoogleService-Info.plist */; };
+		6E64CE8C29E1B48D001DA74B /* LampViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E64CE8B29E1B48D001DA74B /* LampViewController.storyboard */; };
+		6E64CE8E29E1B4F0001DA74B /* LampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E64CE8D29E1B4F0001DA74B /* LampViewController.swift */; };
 		6E8BFDF129DDB3EC00DAFCD8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8BFDF029DDB3EC00DAFCD8 /* BaseViewController.swift */; };
 		6EAA86BE29DB2CBA003CA7ED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA86BD29DB2CBA003CA7ED /* HomeViewController.swift */; };
 		6EAA86C129DB2CC5003CA7ED /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EAA86BF29DB2CC4003CA7ED /* WeatherCell.xib */; };
@@ -50,6 +52,8 @@
 		6E09A72E29DAAD3500E3B7E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E09A73029DAAD3500E3B7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E09A73629DAAD7600E3B7E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6E64CE8B29E1B48D001DA74B /* LampViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LampViewController.storyboard; sourceTree = "<group>"; };
+		6E64CE8D29E1B4F0001DA74B /* LampViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LampViewController.swift; sourceTree = "<group>"; };
 		6E8BFDF029DDB3EC00DAFCD8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		6EAA86BD29DB2CBA003CA7ED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6EAA86BF29DB2CC4003CA7ED /* WeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
@@ -135,10 +139,20 @@
 			path = SmartGadrden;
 			sourceTree = "<group>";
 		};
+		6E64CE8A29E1B469001DA74B /*  LampScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6E64CE8B29E1B48D001DA74B /* LampViewController.storyboard */,
+				6E64CE8D29E1B4F0001DA74B /* LampViewController.swift */,
+			);
+			path = " LampScreen";
+			sourceTree = "<group>";
+		};
 		6EAA86B729DB2C7A003CA7ED /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				6E07A67F29DC2BEB000CEB48 /* HomeViewController.storyboard */,
+				6E64CE8A29E1B469001DA74B /*  LampScreen */,
 				6ED3793729DEAF9C00101FD3 /* SettingScreen */,
 				6EAA86BC29DB2CB1003CA7ED /* HomeScreen */,
 				6EAA86D829DB2EA6003CA7ED /* ConfigScreen */,
@@ -306,6 +320,7 @@
 				6E07A68029DC2BEB000CEB48 /* HomeViewController.storyboard in Resources */,
 				6E09A72C29DAAD3500E3B7E7 /* Assets.xcassets in Resources */,
 				6EAA86C629DB2CD5003CA7ED /* HeaderReusableView.xib in Resources */,
+				6E64CE8C29E1B48D001DA74B /* LampViewController.storyboard in Resources */,
 				6E09A72A29DAAD3300E3B7E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +386,7 @@
 				6EAA86C229DB2CC5003CA7ED /* WeatherCell.swift in Sources */,
 				6EB8623829DD64890081624A /* WriteDataFirebase.swift in Sources */,
 				6E09A72529DAAD3300E3B7E7 /* SceneDelegate.swift in Sources */,
+				6E64CE8E29E1B4F0001DA74B /* LampViewController.swift in Sources */,
 				6ECF040929DC930B00CF9D76 /* EquipmentCell.swift in Sources */,
 				6EAA86BE29DB2CBA003CA7ED /* HomeViewController.swift in Sources */,
 				6EAA86CD29DB2CE8003CA7ED /* WeatherData.swift in Sources */,

@@ -10,6 +10,7 @@ import UIKit
 class LampViewController: BaseViewController {
 
     @IBOutlet weak var backgroundTimeStartView: UIView!
+    @IBOutlet weak var backgroundTimeEndView: UIView!
 
 
     override func viewDidLoad() {

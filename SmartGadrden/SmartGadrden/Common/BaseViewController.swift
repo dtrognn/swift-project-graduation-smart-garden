@@ -39,7 +39,7 @@ class BaseViewController: UIViewController {
         }
     }
 
-    func showAlert(title: String, message: String, actions: [UIAlertAction]) {
+    func  showAlert(title: String, message: String, actions: [UIAlertAction]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         actions.forEach {
             alert.addAction($0)

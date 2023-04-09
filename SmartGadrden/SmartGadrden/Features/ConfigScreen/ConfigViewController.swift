@@ -84,11 +84,9 @@ extension ConfigViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
 
-        if indexPath.row == 1 {
-            let mainStoryboard = UIStoryboard(name: "HomeViewController", bundle: nil)
-            let configStoryboard = UIStoryboard(name: "ConfigViewController", bundle: nil)
-            let lampViewController = configStoryboard.instantiateViewController(withIdentifier: "LampViewController") as! LampViewController
-            mainStoryboard.instantiateViewController(withIdentifier: "TabBarController").navigationController?.pushViewController(lampViewController, animated: true)
+        if indexPath.row == 3 {
+            let lampVC = storyboard?.instantiateViewController(withIdentifier: "LampViewController") as! LampViewController
+            present(lampVC, animated: true)
         }
     }
 }

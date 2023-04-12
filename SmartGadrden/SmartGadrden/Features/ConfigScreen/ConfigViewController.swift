@@ -32,7 +32,9 @@ class ConfigViewController: BaseViewController {
     // MARK: - initDataWorkModeFirebase
 
     private func initDataWorkModeFirebase() {
+        displayIndicator(isShow: true)
         fetchDataFromFirebase(atPath: "CHEDO", dataType: String.self) { [weak self] result in
+            self?.displayIndicator(isShow: false)
             switch result {
             case .success(let data):
                 self?.workMode = data
@@ -82,8 +84,6 @@ class ConfigViewController: BaseViewController {
 
 extension ConfigViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
-
         if indexPath.row == 3 {
             let lampVC = storyboard?.instantiateViewController(withIdentifier: "LampViewController") as! LampViewController
             present(lampVC, animated: true)
@@ -143,20 +143,16 @@ extension ConfigViewController: UICollectionViewDataSource {
     }
 
     private func updateFirebaseData() {
+        displayIndicator(isShow: true)
         writeDataToFirebase("TINHIEUDONGCO", engineStates) { [weak self] result in
+            self?.displayIndicator(isShow: false)
             switch result {
             case .success:
-                self?.handleWriteDataSuccess()
+                print(Self.self, #function)
             case .failure(let error):
                 self?.handleWriteDataFailed(error)
             }
         }
-    }
-
-    private func handleWriteDataSuccess() {
-        let cancelAction = UIAlertAction(title: "Đóng", style: .default)
-
-        showAlert(title: "Thông báo", message: "Bật/tắt thiết thành công", actions: [cancelAction])
     }
 
     private func handleWriteDataFailed(_ error: Error) {

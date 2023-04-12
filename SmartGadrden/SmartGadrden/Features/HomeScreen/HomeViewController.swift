@@ -46,7 +46,9 @@ class HomeViewController: BaseViewController {
     // MARK: - initDataFirebase
 
     func initDataFirebase() {
+        displayIndicator(isShow: true)
         fetchDataFromFirebase(atPath: "DULIEUCAMBIEN", dataType: String.self) { [weak self] result in
+            self?.displayIndicator(isShow: false)
             switch result {
             case .success(let data):
                 self?.tempC = "\(data.prefix(2))"

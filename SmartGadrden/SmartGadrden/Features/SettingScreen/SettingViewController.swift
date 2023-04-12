@@ -45,7 +45,9 @@ class SettingViewController: BaseViewController {
     }
 
     private func initDataModeFirebase() {
+        displayIndicator(isShow: true)
         fetchDataFromFirebase(atPath: "CHEDO", dataType: String.self) { [weak self] result in
+            self?.displayIndicator(isShow: false)
             switch result {
             case .success(let data):
                 self?.workMode = data

@@ -18,7 +18,10 @@
 		6E09A72F29DAAD3500E3B7E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E09A72D29DAAD3500E3B7E7 /* LaunchScreen.storyboard */; };
 		6E09A73729DAAD7600E3B7E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E09A73629DAAD7600E3B7E7 /* GoogleService-Info.plist */; };
 		6E64CE8E29E1B4F0001DA74B /* LampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E64CE8D29E1B4F0001DA74B /* LampViewController.swift */; };
+		6E7C1E1D29E4035E002B28FD /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C1E1C29E4035E002B28FD /* ProgressBar.swift */; };
+		6E7C1E1F29E403D0002B28FD /* ProgressHUB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C1E1E29E403D0002B28FD /* ProgressHUB.swift */; };
 		6E8BFDF129DDB3EC00DAFCD8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8BFDF029DDB3EC00DAFCD8 /* BaseViewController.swift */; };
+		6E8FAA9629E6A604000C3984 /* TimeInterval+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8FAA9529E6A604000C3984 /* TimeInterval+Format.swift */; };
 		6EAA86BE29DB2CBA003CA7ED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA86BD29DB2CBA003CA7ED /* HomeViewController.swift */; };
 		6EAA86C129DB2CC5003CA7ED /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EAA86BF29DB2CC4003CA7ED /* WeatherCell.xib */; };
 		6EAA86C229DB2CC5003CA7ED /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EAA86C029DB2CC4003CA7ED /* WeatherCell.swift */; };
@@ -52,7 +55,10 @@
 		6E09A73029DAAD3500E3B7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E09A73629DAAD7600E3B7E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E64CE8D29E1B4F0001DA74B /* LampViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LampViewController.swift; sourceTree = "<group>"; };
+		6E7C1E1C29E4035E002B28FD /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		6E7C1E1E29E403D0002B28FD /* ProgressHUB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUB.swift; sourceTree = "<group>"; };
 		6E8BFDF029DDB3EC00DAFCD8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		6E8FAA9529E6A604000C3984 /* TimeInterval+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Format.swift"; sourceTree = "<group>"; };
 		6EAA86BD29DB2CBA003CA7ED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6EAA86BF29DB2CC4003CA7ED /* WeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
 		6EAA86C029DB2CC4003CA7ED /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
@@ -122,7 +128,7 @@
 		6E09A72129DAAD3300E3B7E7 /* SmartGadrden */ = {
 			isa = PBXGroup;
 			children = (
-				6EAA86D229DB2DA2003CA7ED /* UI */,
+				6EAA86D229DB2DA2003CA7ED /* UI+Extension */,
 				6EB8623629DD64420081624A /* Common */,
 				6EAA86B729DB2C7A003CA7ED /* Features */,
 				6E09A72229DAAD3300E3B7E7 /* AppDelegate.swift */,
@@ -141,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				6E64CE8D29E1B4F0001DA74B /* LampViewController.swift */,
+				6E7C1E1C29E4035E002B28FD /* ProgressBar.swift */,
 			);
 			path = " LampScreen";
 			sourceTree = "<group>";
@@ -198,12 +205,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6EAA86D229DB2DA2003CA7ED /* UI */ = {
+		6EAA86D229DB2DA2003CA7ED /* UI+Extension */ = {
 			isa = PBXGroup;
 			children = (
 				6EAA86D029DB2D9D003CA7ED /* UIView+Style.swift */,
+				6E8FAA9529E6A604000C3984 /* TimeInterval+Format.swift */,
 			);
-			path = UI;
+			path = "UI+Extension";
 			sourceTree = "<group>";
 		};
 		6EAA86D529DB2E47003CA7ED /* SplashScreen */ = {
@@ -229,6 +237,7 @@
 				6EAA86DB29DB3505003CA7ED /* FetchDataFirebase.swift */,
 				6EB8623729DD64890081624A /* WriteDataFirebase.swift */,
 				6E8BFDF029DDB3EC00DAFCD8 /* BaseViewController.swift */,
+				6E7C1E1E29E403D0002B28FD /* ProgressHUB.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -372,7 +381,9 @@
 			files = (
 				6EAA86DC29DB3505003CA7ED /* FetchDataFirebase.swift in Sources */,
 				6EAA86CE29DB2CE8003CA7ED /* Current.swift in Sources */,
+				6E7C1E1F29E403D0002B28FD /* ProgressHUB.swift in Sources */,
 				6E09A72729DAAD3300E3B7E7 /* ViewController.swift in Sources */,
+				6E8FAA9629E6A604000C3984 /* TimeInterval+Format.swift in Sources */,
 				6EAA86D729DB2EA3003CA7ED /* ConfigViewController.swift in Sources */,
 				6E09A72329DAAD3300E3B7E7 /* AppDelegate.swift in Sources */,
 				6ED3793929DEAFC700101FD3 /* SettingViewController.swift in Sources */,
@@ -388,6 +399,7 @@
 				6EAA86CD29DB2CE8003CA7ED /* WeatherData.swift in Sources */,
 				6EAA86CC29DB2CE8003CA7ED /* Location.swift in Sources */,
 				6EAA86D429DB2E43003CA7ED /* SplashViewController.swift in Sources */,
+				6E7C1E1D29E4035E002B28FD /* ProgressBar.swift in Sources */,
 				6E07A67C29DC22BE000CEB48 /* HomeVC+FetchDataAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

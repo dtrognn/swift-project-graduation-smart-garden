@@ -143,20 +143,20 @@
 			path = SmartGadrden;
 			sourceTree = "<group>";
 		};
-		6E64CE8A29E1B469001DA74B /*  LampScreen */ = {
+		6E64CE8A29E1B469001DA74B /* PumpScreen */ = {
 			isa = PBXGroup;
 			children = (
 				6E64CE8D29E1B4F0001DA74B /* LampViewController.swift */,
 				6E7C1E1C29E4035E002B28FD /* ProgressBar.swift */,
 			);
-			path = " LampScreen";
+			path = PumpScreen;
 			sourceTree = "<group>";
 		};
 		6EAA86B729DB2C7A003CA7ED /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				6E07A67F29DC2BEB000CEB48 /* HomeViewController.storyboard */,
-				6E64CE8A29E1B469001DA74B /*  LampScreen */,
+				6E64CE8A29E1B469001DA74B /* PumpScreen */,
 				6ED3793729DEAF9C00101FD3 /* SettingScreen */,
 				6EAA86BC29DB2CB1003CA7ED /* HomeScreen */,
 				6EAA86D829DB2EA6003CA7ED /* ConfigScreen */,

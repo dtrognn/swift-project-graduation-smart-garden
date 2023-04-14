@@ -545,17 +545,22 @@
                                             <constraint firstAttribute="height" constant="40" id="ysU-s7-Epn"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MMR-HP-AW0">
-                                        <rect key="frame" x="76" y="191" width="240" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMR-HP-AW0" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="60" width="393" height="250"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="Vs9-SL-FCi"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="6q0-0c-sYa" firstAttribute="leading" secondItem="u00-8i-lmQ" secondAttribute="leading" id="40S-0M-4NE"/>
+                                    <constraint firstItem="MMR-HP-AW0" firstAttribute="top" secondItem="6q0-0c-sYa" secondAttribute="bottom" constant="20" id="Suq-rT-Evf"/>
                                     <constraint firstAttribute="trailing" secondItem="6q0-0c-sYa" secondAttribute="trailing" id="Y3R-OC-Vwn"/>
                                     <constraint firstItem="6q0-0c-sYa" firstAttribute="top" secondItem="u00-8i-lmQ" secondAttribute="top" id="cw0-8v-iGb"/>
+                                    <constraint firstItem="MMR-HP-AW0" firstAttribute="leading" secondItem="u00-8i-lmQ" secondAttribute="leading" id="mob-Nm-K1i"/>
+                                    <constraint firstAttribute="trailing" secondItem="MMR-HP-AW0" secondAttribute="trailing" id="nbo-pC-0kZ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -568,6 +573,9 @@
                             <constraint firstItem="u00-8i-lmQ" firstAttribute="top" secondItem="xmc-XH-TSU" secondAttribute="top" id="zdz-Bc-kW9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lineChart" destination="MMR-HP-AW0" id="zjZ-nZ-xVb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pI8-uj-5Wa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -964,11 +972,21 @@
                                             <constraint firstItem="kg6-Dl-Gct" firstAttribute="centerX" secondItem="Epu-db-kMR" secondAttribute="centerX" id="qgb-pn-VHZ"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RhS-uE-Q1E" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="60" width="393" height="250"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="SVL-1o-U5b"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Epu-db-kMR" secondAttribute="trailing" id="8K2-HK-d50"/>
+                                    <constraint firstAttribute="trailing" secondItem="RhS-uE-Q1E" secondAttribute="trailing" id="NpY-7n-Y3k"/>
+                                    <constraint firstItem="RhS-uE-Q1E" firstAttribute="top" secondItem="Epu-db-kMR" secondAttribute="bottom" constant="20" id="QOY-rA-nGe"/>
                                     <constraint firstItem="Epu-db-kMR" firstAttribute="top" secondItem="7tT-sp-iDG" secondAttribute="top" id="VBQ-cd-OKu"/>
+                                    <constraint firstItem="RhS-uE-Q1E" firstAttribute="leading" secondItem="7tT-sp-iDG" secondAttribute="leading" id="cOy-Lm-hVo"/>
                                     <constraint firstItem="Epu-db-kMR" firstAttribute="leading" secondItem="7tT-sp-iDG" secondAttribute="leading" id="dZQ-7M-0C6"/>
                                 </constraints>
                             </view>
@@ -982,6 +1000,9 @@
                             <constraint firstItem="WFO-0Z-ptx" firstAttribute="trailing" secondItem="7tT-sp-iDG" secondAttribute="trailing" id="qZ7-Tr-ny2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lineChart" destination="RhS-uE-Q1E" id="ZHY-lI-ob8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n55-Fw-bDF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1030,12 +1051,22 @@
                                             <constraint firstItem="lA8-ii-HCe" firstAttribute="centerX" secondItem="PFu-Yv-gob" secondAttribute="centerX" id="eCY-Sh-mMI"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2e-sj-cQd" customClass="LineChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="60" width="393" height="250"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="86H-zV-lPk"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="PFu-Yv-gob" firstAttribute="top" secondItem="Shh-31-l2q" secondAttribute="top" id="1q4-MG-0AQ"/>
                                     <constraint firstAttribute="trailing" secondItem="PFu-Yv-gob" secondAttribute="trailing" id="F94-UD-qV9"/>
+                                    <constraint firstAttribute="trailing" secondItem="y2e-sj-cQd" secondAttribute="trailing" id="HAD-RX-wpY"/>
                                     <constraint firstItem="PFu-Yv-gob" firstAttribute="leading" secondItem="Shh-31-l2q" secondAttribute="leading" id="VvK-nd-XGZ"/>
+                                    <constraint firstItem="y2e-sj-cQd" firstAttribute="leading" secondItem="Shh-31-l2q" secondAttribute="leading" id="duc-Px-o07"/>
+                                    <constraint firstItem="y2e-sj-cQd" firstAttribute="top" secondItem="PFu-Yv-gob" secondAttribute="bottom" constant="20" id="fbN-Ji-FWa"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1048,6 +1079,9 @@
                             <constraint firstItem="Shh-31-l2q" firstAttribute="leading" secondItem="dEG-di-2Db" secondAttribute="leading" id="g7H-RJ-iE6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lineChart" destination="y2e-sj-cQd" id="jos-bi-FE7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OjK-29-lsl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

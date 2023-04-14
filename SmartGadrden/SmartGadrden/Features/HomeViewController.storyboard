@@ -19,7 +19,47 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UWl-V8-kVZ">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Smart_Garden-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="oWf-FR-vHy">
+                                        <rect key="frame" x="71.666666666666686" y="254.66666666666669" width="250" height="250"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="oWf-FR-vHy" secondAttribute="height" multiplier="1:1" id="PtV-IE-XCc"/>
+                                            <constraint firstAttribute="width" constant="250" id="vgZ-68-tiY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VƯỜN THÔNG MINH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMD-Te-MU3">
+                                        <rect key="frame" x="93.333333333333329" y="504.66666666666657" width="206.33333333333337" height="26.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                        <color key="textColor" red="0.20392156862745098" green="0.30588235294117649" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SF9-AD-kgh">
+                                        <rect key="frame" x="107.66666666666669" y="131" width="178" height="123.66666666666669"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ma-sR-Vq4">
+                                                <rect key="frame" x="0.0" y="0.0" width="178" height="89.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="75"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly8-UA-rFu">
+                                                <rect key="frame" x="64.999999999999986" y="99.666666666666686" width="48" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.88235294117647056" green="0.95294117647058818" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="YMD-Te-MU3" firstAttribute="centerX" secondItem="UWl-V8-kVZ" secondAttribute="centerX" id="Ssr-E5-SvI"/>
+                                    <constraint firstItem="oWf-FR-vHy" firstAttribute="centerY" secondItem="UWl-V8-kVZ" secondAttribute="centerY" id="dFJ-UZ-vQt"/>
+                                    <constraint firstItem="oWf-FR-vHy" firstAttribute="top" secondItem="SF9-AD-kgh" secondAttribute="bottom" id="joN-44-moT"/>
+                                    <constraint firstItem="oWf-FR-vHy" firstAttribute="centerX" secondItem="UWl-V8-kVZ" secondAttribute="centerX" id="n6B-br-LQo"/>
+                                    <constraint firstItem="YMD-Te-MU3" firstAttribute="top" secondItem="oWf-FR-vHy" secondAttribute="bottom" id="naR-9G-lGG"/>
+                                    <constraint firstItem="SF9-AD-kgh" firstAttribute="centerX" secondItem="UWl-V8-kVZ" secondAttribute="centerX" id="wvW-Ng-N2m"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -33,6 +73,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="PxZ-sN-nzr"/>
                     <connections>
+                        <outlet property="dateLabel" destination="Ly8-UA-rFu" id="vwv-MC-HbH"/>
+                        <outlet property="timeLabel" destination="2Ma-sR-Vq4" id="4H2-yP-83V"/>
                         <segue destination="YX7-dN-TxI" kind="presentation" identifier="SplashViewController" modalPresentationStyle="overFullScreen" id="G8W-YI-tp8"/>
                     </connections>
                 </viewController>
@@ -1641,6 +1683,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Smart_Garden-removebg-preview" width="500" height="500"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="gear" width="32" height="32"/>
         <image name="house-black-silhouette-without-door" width="32" height="32"/>

@@ -12,7 +12,7 @@ class SoilMostureViewController: BaseViewController {
     @IBOutlet var lineChart: LineChartView!
 
     private var timeTitle: [String] = []
-    private var tempData: [String] = []
+    private var soilMostureData: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +30,11 @@ class SoilMostureViewController: BaseViewController {
 
                 self?.appendTemperature(temp, self!.getCurrentDateTime())
 
-                if self!.tempData.count > 7, self!.timeTitle.count > 7 {
+                if self!.soilMostureData.count > 7, self!.timeTitle.count > 7 {
                     self?.removeFirst()
                 }
 
-                self?.createLineChart(self!.timeTitle, self!.tempData)
+                self?.createLineChart(self!.timeTitle, self!.soilMostureData)
             case .failure(let error):
                 self?.handleReadDataFailed(error)
             }
@@ -49,12 +49,12 @@ class SoilMostureViewController: BaseViewController {
     }
 
     private func appendTemperature(_ data: String, _ title: String) {
-        tempData.append(data)
+        soilMostureData.append(data)
         timeTitle.append(title)
     }
 
     private func removeFirst() {
-        tempData.removeFirst()
+        soilMostureData.removeFirst()
         timeTitle.removeFirst()
     }
 
@@ -75,7 +75,7 @@ class SoilMostureViewController: BaseViewController {
         xAxis.granularity = 1
 
         xAxis.axisMinimum = -0.3
-        xAxis.axisMaximum = Double(tempData.count) - 0.7
+        xAxis.axisMaximum = Double(soilMostureData.count) - 0.7
 
         let lineData = LineChartData(dataSet: lineDataSet)
         lineChart.data = lineData

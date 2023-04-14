@@ -1204,6 +1204,9 @@
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Thiết lập"/>
+                                                        <connections>
+                                                            <action selector="touchUpInsideFanConfigButton:" destination="WSk-VO-mR7" eventType="touchUpInside" id="VbA-1Z-9tZ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1251,7 +1254,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="eT1-PS-LY6"/>
                     <connections>
+                        <outlet property="backgroundTimeoutView" destination="CPm-sQ-dtc" id="Dnk-9E-Ycg"/>
+                        <outlet property="fanConfigButton" destination="kUb-gR-kjB" id="KYv-Ky-df1"/>
                         <outlet property="progressBar" destination="1EP-YI-d35" id="fUx-Cj-daS"/>
+                        <outlet property="timeoutTextField" destination="iQ5-cY-MTB" id="ocN-8Z-0PQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfQ-ps-zg3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1363,6 +1369,9 @@
                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Thiết lập"/>
+                                                        <connections>
+                                                            <action selector="touchUpInsideBulbConfigButton:" destination="yw7-eC-9AK" eventType="touchUpInside" id="Taf-jg-xfY"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1410,7 +1419,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="1kj-qR-BuN"/>
                     <connections>
+                        <outlet property="backgroundTimeoutView" destination="NuK-Zs-bsV" id="Vdx-J2-YnQ"/>
+                        <outlet property="bulbConfigButton" destination="4cz-XD-E1G" id="bFW-pU-ULh"/>
                         <outlet property="progressBar" destination="Yla-7s-J0F" id="SQX-ip-jlH"/>
+                        <outlet property="timeoutTextField" destination="ntG-wK-hRC" id="nJa-uT-Vla"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1X-Ef-mOl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

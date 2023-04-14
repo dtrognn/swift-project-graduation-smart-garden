@@ -11,8 +11,8 @@ import UIKit
 class TemperatureViewController: BaseViewController {
     @IBOutlet var lineChart: LineChartView!
 
-    var timeTitle: [String] = []
-    var tempData: [String] = []
+    private var timeTitle: [String] = []
+    private var tempData: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

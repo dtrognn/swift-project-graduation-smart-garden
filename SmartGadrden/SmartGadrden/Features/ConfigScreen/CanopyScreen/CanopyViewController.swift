@@ -39,8 +39,7 @@ class CanopyViewController: BaseViewController {
 
     @IBAction func touchUpInsideFanConfigButton(_ sender: Any) {
         if let time = timeoutTextField.text, !time.isEmpty {
-            timeLeft = getTimeLeft(time)
-            writeDataTimer("\(Int(timeLeft))")
+            compareTime(inputTime: time)
         } else {
             handTextFieldEmpty()
         }
@@ -49,6 +48,29 @@ class CanopyViewController: BaseViewController {
 
         endTime = Date().addingTimeInterval(timeLeft)
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+    }
+
+    private func compareTime(inputTime: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+
+        let now = Date()
+        let currentTimeStr = dateFormatter.string(from: now)
+        let currentTime = dateFormatter.date(from: currentTimeStr)!
+
+        let inputTimeDate = dateFormatter.date(from: inputTime)!
+
+        if inputTimeDate < currentTime {
+            handleInvalidTimeTextField()
+        } else {
+            timeLeft = getTimeLeft(inputTime)
+            writeDataTimer("\(Int(timeLeft))")
+        }
+    }
+
+    private func handleInvalidTimeTextField() {
+        let dismissAction = UIAlertAction(title: "Đóng", style: .default)
+        showAlert(title: "Lỗi", message: "Thời gian không hợp lệ", actions: [dismissAction])
     }
 
     private func handTextFieldEmpty() {

@@ -128,6 +128,7 @@ class LampViewController: BaseViewController {
         } else {
             progressBar.textLayer.string = timeLeft.time
             timer.invalidate()
+            timeoutTextField.text = ""
         }
     }
 

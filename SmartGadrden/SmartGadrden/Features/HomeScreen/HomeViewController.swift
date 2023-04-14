@@ -171,7 +171,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     {
         let widthContainer: CGFloat = view.frame.size.width
         let widthCell = floor((widthContainer - cellPaddingLeft - cellPaddingRight - (numberOfItemInRow - 1) * minimumInteritemSpacing) / numberOfItemInRow)
-        let heightCell: CGFloat = widthCell + 30
+        let heightCell: CGFloat = widthCell + 20
 
         return CGSize(width: widthCell, height: heightCell)
     }

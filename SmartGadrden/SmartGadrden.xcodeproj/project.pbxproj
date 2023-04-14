@@ -37,6 +37,10 @@
 		6EB8623829DD64890081624A /* WriteDataFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB8623729DD64890081624A /* WriteDataFirebase.swift */; };
 		6ECF040929DC930B00CF9D76 /* EquipmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECF040729DC930B00CF9D76 /* EquipmentCell.swift */; };
 		6ECF040A29DC930B00CF9D76 /* EquipmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ECF040829DC930B00CF9D76 /* EquipmentCell.xib */; };
+		6ED0E33729E6F892007C0D1C /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0E33629E6F892007C0D1C /* TemperatureViewController.swift */; };
+		6ED0E33A29E6F952007C0D1C /* HumidityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0E33929E6F952007C0D1C /* HumidityViewController.swift */; };
+		6ED0E33D29E6F98D007C0D1C /* SoilMostureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0E33C29E6F98D007C0D1C /* SoilMostureViewController.swift */; };
+		6ED0E34029E6F9A1007C0D1C /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0E33F29E6F9A1007C0D1C /* LightViewController.swift */; };
 		6ED3793929DEAFC700101FD3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3793829DEAFC700101FD3 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +78,10 @@
 		6EB8623729DD64890081624A /* WriteDataFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDataFirebase.swift; sourceTree = "<group>"; };
 		6ECF040729DC930B00CF9D76 /* EquipmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentCell.swift; sourceTree = "<group>"; };
 		6ECF040829DC930B00CF9D76 /* EquipmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EquipmentCell.xib; sourceTree = "<group>"; };
+		6ED0E33629E6F892007C0D1C /* TemperatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
+		6ED0E33929E6F952007C0D1C /* HumidityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumidityViewController.swift; sourceTree = "<group>"; };
+		6ED0E33C29E6F98D007C0D1C /* SoilMostureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoilMostureViewController.swift; sourceTree = "<group>"; };
+		6ED0E33F29E6F9A1007C0D1C /* LightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
 		6ED3793829DEAFC700101FD3 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CAA46F699802B29EE3A28F34 /* Pods_SmartGadrden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartGadrden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,6 +164,10 @@
 			isa = PBXGroup;
 			children = (
 				6E07A67F29DC2BEB000CEB48 /* HomeViewController.storyboard */,
+				6ED0E33B29E6F95B007C0D1C /* SoilMostureScreen */,
+				6ED0E33E29E6F993007C0D1C /* LightScreen */,
+				6ED0E33829E6F93C007C0D1C /* HumidityScreen */,
+				6ED0E33529E6F861007C0D1C /* TempScreen */,
 				6E64CE8A29E1B469001DA74B /* PumpScreen */,
 				6ED3793729DEAF9C00101FD3 /* SettingScreen */,
 				6EAA86BC29DB2CB1003CA7ED /* HomeScreen */,
@@ -249,6 +261,38 @@
 				6ECF040829DC930B00CF9D76 /* EquipmentCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		6ED0E33529E6F861007C0D1C /* TempScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0E33629E6F892007C0D1C /* TemperatureViewController.swift */,
+			);
+			path = TempScreen;
+			sourceTree = "<group>";
+		};
+		6ED0E33829E6F93C007C0D1C /* HumidityScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0E33929E6F952007C0D1C /* HumidityViewController.swift */,
+			);
+			path = HumidityScreen;
+			sourceTree = "<group>";
+		};
+		6ED0E33B29E6F95B007C0D1C /* SoilMostureScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0E33C29E6F98D007C0D1C /* SoilMostureViewController.swift */,
+			);
+			path = SoilMostureScreen;
+			sourceTree = "<group>";
+		};
+		6ED0E33E29E6F993007C0D1C /* LightScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0E33F29E6F9A1007C0D1C /* LightViewController.swift */,
+			);
+			path = LightScreen;
 			sourceTree = "<group>";
 		};
 		6ED3793729DEAF9C00101FD3 /* SettingScreen */ = {
@@ -382,6 +426,7 @@
 				6EAA86DC29DB3505003CA7ED /* FetchDataFirebase.swift in Sources */,
 				6EAA86CE29DB2CE8003CA7ED /* Current.swift in Sources */,
 				6E7C1E1F29E403D0002B28FD /* ProgressHUB.swift in Sources */,
+				6ED0E33A29E6F952007C0D1C /* HumidityViewController.swift in Sources */,
 				6E09A72729DAAD3300E3B7E7 /* ViewController.swift in Sources */,
 				6E8FAA9629E6A604000C3984 /* TimeInterval+Format.swift in Sources */,
 				6EAA86D729DB2EA3003CA7ED /* ConfigViewController.swift in Sources */,
@@ -392,8 +437,10 @@
 				6E8BFDF129DDB3EC00DAFCD8 /* BaseViewController.swift in Sources */,
 				6EAA86C229DB2CC5003CA7ED /* WeatherCell.swift in Sources */,
 				6EB8623829DD64890081624A /* WriteDataFirebase.swift in Sources */,
+				6ED0E33D29E6F98D007C0D1C /* SoilMostureViewController.swift in Sources */,
 				6E09A72529DAAD3300E3B7E7 /* SceneDelegate.swift in Sources */,
 				6E64CE8E29E1B4F0001DA74B /* LampViewController.swift in Sources */,
+				6ED0E33729E6F892007C0D1C /* TemperatureViewController.swift in Sources */,
 				6ECF040929DC930B00CF9D76 /* EquipmentCell.swift in Sources */,
 				6EAA86BE29DB2CBA003CA7ED /* HomeViewController.swift in Sources */,
 				6EAA86CD29DB2CE8003CA7ED /* WeatherData.swift in Sources */,
@@ -401,6 +448,7 @@
 				6EAA86D429DB2E43003CA7ED /* SplashViewController.swift in Sources */,
 				6E7C1E1D29E4035E002B28FD /* ProgressBar.swift in Sources */,
 				6E07A67C29DC22BE000CEB48 /* HomeVC+FetchDataAPI.swift in Sources */,
+				6ED0E34029E6F9A1007C0D1C /* LightViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -122,7 +122,22 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected at \(indexPath.row)")
+        switch indexPath.row {
+        case 0:
+            let tempVC = storyboard?.instantiateViewController(withIdentifier: "TemperatureViewController") as! TemperatureViewController
+            present(tempVC, animated: true)
+        case 1:
+            let humidityVC = storyboard?.instantiateViewController(withIdentifier: "HumidityViewController") as! HumidityViewController
+            present(humidityVC, animated: true)
+        case 2:
+            let soilMostureVC = storyboard?.instantiateViewController(withIdentifier: "SoilMostureViewController") as! SoilMostureViewController
+            present(soilMostureVC, animated: true)
+        case 3:
+            let lightVC = storyboard?.instantiateViewController(withIdentifier: "LightViewController") as! LightViewController
+            present(lightVC, animated: true)
+        default:
+            break
+        }
     }
 }
 

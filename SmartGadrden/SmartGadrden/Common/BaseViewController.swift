@@ -54,4 +54,10 @@ class BaseViewController: UIViewController {
         }
         present(alert, animated: true)
     }
+
+    func getCurrentDateTime() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E HH:mm"
+        return dateFormatter.string(from: Date())
+    }
 }

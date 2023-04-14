@@ -42,6 +42,9 @@
 		6ED0E33D29E6F98D007C0D1C /* SoilMostureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0E33C29E6F98D007C0D1C /* SoilMostureViewController.swift */; };
 		6ED0E34029E6F9A1007C0D1C /* LightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED0E33F29E6F9A1007C0D1C /* LightViewController.swift */; };
 		6ED3793929DEAFC700101FD3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED3793829DEAFC700101FD3 /* SettingViewController.swift */; };
+		6EE811C829E9A17C00DD8A92 /* FanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE811C729E9A17C00DD8A92 /* FanViewController.swift */; };
+		6EE811CA29E9A1AA00DD8A92 /* BulbViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE811C929E9A1AA00DD8A92 /* BulbViewController.swift */; };
+		6EE811CE29E9A1F000DD8A92 /* CanopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE811CD29E9A1F000DD8A92 /* CanopyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +86,9 @@
 		6ED0E33C29E6F98D007C0D1C /* SoilMostureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoilMostureViewController.swift; sourceTree = "<group>"; };
 		6ED0E33F29E6F9A1007C0D1C /* LightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightViewController.swift; sourceTree = "<group>"; };
 		6ED3793829DEAFC700101FD3 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		6EE811C729E9A17C00DD8A92 /* FanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanViewController.swift; sourceTree = "<group>"; };
+		6EE811C929E9A1AA00DD8A92 /* BulbViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbViewController.swift; sourceTree = "<group>"; };
+		6EE811CD29E9A1F000DD8A92 /* CanopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanopyViewController.swift; sourceTree = "<group>"; };
 		CAA46F699802B29EE3A28F34 /* Pods_SmartGadrden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartGadrden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				6E64CE8D29E1B4F0001DA74B /* LampViewController.swift */,
-				6E7C1E1C29E4035E002B28FD /* ProgressBar.swift */,
 			);
 			path = PumpScreen;
 			sourceTree = "<group>";
@@ -164,13 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				6E07A67F29DC2BEB000CEB48 /* HomeViewController.storyboard */,
-				6ED0E33B29E6F95B007C0D1C /* SoilMostureScreen */,
-				6ED0E33E29E6F993007C0D1C /* LightScreen */,
-				6ED0E33829E6F93C007C0D1C /* HumidityScreen */,
-				6ED0E33529E6F861007C0D1C /* TempScreen */,
-				6E64CE8A29E1B469001DA74B /* PumpScreen */,
-				6ED3793729DEAF9C00101FD3 /* SettingScreen */,
 				6EAA86BC29DB2CB1003CA7ED /* HomeScreen */,
+				6ED3793729DEAF9C00101FD3 /* SettingScreen */,
 				6EAA86D829DB2EA6003CA7ED /* ConfigScreen */,
 				6EAA86D529DB2E47003CA7ED /* SplashScreen */,
 			);
@@ -180,6 +180,10 @@
 		6EAA86BC29DB2CB1003CA7ED /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				6ED0E33B29E6F95B007C0D1C /* SoilMostureScreen */,
+				6ED0E33E29E6F993007C0D1C /* LightScreen */,
+				6ED0E33829E6F93C007C0D1C /* HumidityScreen */,
+				6ED0E33529E6F861007C0D1C /* TempScreen */,
 				6EAA86C329DB2CC8003CA7ED /* Cell */,
 				6EAA86C829DB2CD8003CA7ED /* Header */,
 				6EAA86CF29DB2CEC003CA7ED /* Model */,
@@ -237,6 +241,10 @@
 		6EAA86D829DB2EA6003CA7ED /* ConfigScreen */ = {
 			isa = PBXGroup;
 			children = (
+				6EE811CC29E9A1E200DD8A92 /* CanopyScreen */,
+				6EE811CB29E9A1B200DD8A92 /* BulbScreen */,
+				6EE811C629E9A0F900DD8A92 /* FanScreen */,
+				6E64CE8A29E1B469001DA74B /* PumpScreen */,
 				6EAA86D629DB2EA3003CA7ED /* ConfigViewController.swift */,
 				6ECF040B29DC931C00CF9D76 /* Cell */,
 			);
@@ -246,6 +254,7 @@
 		6EB8623629DD64420081624A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6E7C1E1C29E4035E002B28FD /* ProgressBar.swift */,
 				6EAA86DB29DB3505003CA7ED /* FetchDataFirebase.swift */,
 				6EB8623729DD64890081624A /* WriteDataFirebase.swift */,
 				6E8BFDF029DDB3EC00DAFCD8 /* BaseViewController.swift */,
@@ -301,6 +310,30 @@
 				6ED3793829DEAFC700101FD3 /* SettingViewController.swift */,
 			);
 			path = SettingScreen;
+			sourceTree = "<group>";
+		};
+		6EE811C629E9A0F900DD8A92 /* FanScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6EE811C729E9A17C00DD8A92 /* FanViewController.swift */,
+			);
+			path = FanScreen;
+			sourceTree = "<group>";
+		};
+		6EE811CB29E9A1B200DD8A92 /* BulbScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6EE811C929E9A1AA00DD8A92 /* BulbViewController.swift */,
+			);
+			path = BulbScreen;
+			sourceTree = "<group>";
+		};
+		6EE811CC29E9A1E200DD8A92 /* CanopyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6EE811CD29E9A1F000DD8A92 /* CanopyViewController.swift */,
+			);
+			path = CanopyScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,13 +462,16 @@
 				6ED0E33A29E6F952007C0D1C /* HumidityViewController.swift in Sources */,
 				6E09A72729DAAD3300E3B7E7 /* ViewController.swift in Sources */,
 				6E8FAA9629E6A604000C3984 /* TimeInterval+Format.swift in Sources */,
+				6EE811C829E9A17C00DD8A92 /* FanViewController.swift in Sources */,
 				6EAA86D729DB2EA3003CA7ED /* ConfigViewController.swift in Sources */,
 				6E09A72329DAAD3300E3B7E7 /* AppDelegate.swift in Sources */,
 				6ED3793929DEAFC700101FD3 /* SettingViewController.swift in Sources */,
 				6EAA86C729DB2CD5003CA7ED /* HeaderReusableView.swift in Sources */,
+				6EE811CA29E9A1AA00DD8A92 /* BulbViewController.swift in Sources */,
 				6EAA86D129DB2D9D003CA7ED /* UIView+Style.swift in Sources */,
 				6E8BFDF129DDB3EC00DAFCD8 /* BaseViewController.swift in Sources */,
 				6EAA86C229DB2CC5003CA7ED /* WeatherCell.swift in Sources */,
+				6EE811CE29E9A1F000DD8A92 /* CanopyViewController.swift in Sources */,
 				6EB8623829DD64890081624A /* WriteDataFirebase.swift in Sources */,
 				6ED0E33D29E6F98D007C0D1C /* SoilMostureViewController.swift in Sources */,
 				6E09A72529DAAD3300E3B7E7 /* SceneDelegate.swift in Sources */,

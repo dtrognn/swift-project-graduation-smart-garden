@@ -84,9 +84,22 @@ class ConfigViewController: BaseViewController {
 
 extension ConfigViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 3 {
+
+        switch indexPath.row {
+        case 0:
+            let canopyVC = storyboard?.instantiateViewController(withIdentifier: "CanopyViewController") as! CanopyViewController
+            present(canopyVC, animated: true)
+        case 1:
+            let bulbVC = storyboard?.instantiateViewController(withIdentifier: "BulbViewController") as! BulbViewController
+            present(bulbVC, animated: true)
+        case 2:
+            let fanVC = storyboard?.instantiateViewController(withIdentifier: "FanViewController") as! FanViewController
+            present(fanVC, animated: true)
+        case 3:
             let lampVC = storyboard?.instantiateViewController(withIdentifier: "LampViewController") as! LampViewController
             present(lampVC, animated: true)
+        default:
+            break
         }
     }
 }

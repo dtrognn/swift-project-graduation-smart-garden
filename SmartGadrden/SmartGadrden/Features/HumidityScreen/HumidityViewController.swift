@@ -5,25 +5,82 @@
 //  Created by Vu Duc Trong on 12/04/2023.
 //
 
+import Charts
 import UIKit
 
-class HumidityViewController: UIViewController {
+class HumidityViewController: BaseViewController {
+    @IBOutlet var lineChart: LineChartView!
+
+    private var timeTitle: [String] = []
+    private var tempData: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initDataFirebase()
     }
-    
 
-    /*
-    // MARK: - Navigation
+    private func initDataFirebase() {
+        displayIndicator(isShow: true)
+        fetchDataFromFirebase(atPath: "DULIEUCAMBIEN", dataType: String.self) { [weak self] result in
+            self?.displayIndicator(isShow: false)
+            switch result {
+            case .success(let data):
+                let temp = "\(data.dropFirst(2).prefix(2))"
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+                self?.appendTemperature(temp, self!.getCurrentDateTime())
+
+                if self!.tempData.count > 7, self!.timeTitle.count > 7 {
+                    self?.removeFirst()
+                }
+
+                self?.createLineChart(self!.timeTitle, self!.tempData)
+            case .failure(let error):
+                self?.handleReadDataFailed(error)
+            }
+        }
     }
-    */
 
+    private func handleReadDataFailed(_ error: Error) {
+        print("Error: \(error.localizedDescription)")
+
+        let cancelAction = UIAlertAction(title: "Đóng", style: .destructive)
+        showAlert(title: "Lỗi", message: "Lấy dữ liệu không thành công", actions: [cancelAction])
+    }
+
+    private func appendTemperature(_ data: String, _ title: String) {
+        tempData.append(data)
+        timeTitle.append(title)
+    }
+
+    private func removeFirst() {
+        tempData.removeFirst()
+        timeTitle.removeFirst()
+    }
+
+    private func createLineChart(_ timeTitle: [String], _ values: [String]) {
+        var lineArr: [ChartDataEntry] = []
+
+        for i in 0 ..< timeTitle.count {
+            let data = ChartDataEntry(x: Double(i), y: Double(values[i])!)
+            lineArr.append(data)
+        }
+
+        let lineDataSet = LineChartDataSet(entries: lineArr, label: "Humidity")
+        lineDataSet.setColor(.red)
+
+        let xAxis = lineChart.xAxis
+        xAxis.valueFormatter = IndexAxisValueFormatter(values: timeTitle.suffix(7))
+        xAxis.labelCount = 7
+        xAxis.granularity = 1
+
+        xAxis.axisMinimum = -0.3
+        xAxis.axisMaximum = Double(tempData.count) - 0.7
+
+        let lineData = LineChartData(dataSet: lineDataSet)
+        lineChart.data = lineData
+
+        lineChart.animate(xAxisDuration: 2, easingOption: .easeInBounce)
+        lineChart.animate(yAxisDuration: 2, easingOption: .easeInBounce)
+    }
 }

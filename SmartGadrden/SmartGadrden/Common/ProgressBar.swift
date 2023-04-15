@@ -8,8 +8,8 @@
 import UIKit
 
 class ProgressBar: UIView {
-    @IBInspectable public lazy var startGradientColor: UIColor = .green
-    @IBInspectable public lazy var endGradientColor: UIColor = .blue
+    @IBInspectable public lazy var startGradientColor: UIColor = UIColor(red: 0.54, green: 0.79, blue: 0.15, alpha: 1.00)
+    @IBInspectable public lazy var endGradientColor: UIColor = UIColor(red: 0.00, green: 0.47, blue: 0.71, alpha: 1.00)
     @IBInspectable public lazy var backgroundCircleColor: UIColor = .lightGray
     @IBInspectable public lazy var clearColor: UIColor = .clear
 

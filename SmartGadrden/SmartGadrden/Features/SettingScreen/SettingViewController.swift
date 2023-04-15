@@ -42,9 +42,13 @@ class SettingViewController: BaseViewController {
 
     override func configSubViews() {
         backgroundModeButttonView.roundCorners(with: 20)
+        backgroundModeButttonView.backgroundColor = UIColor(red: 0.88, green: 0.95, blue: 0.94, alpha: 1.00)
         backgroundModeAppView.roundCorners(with: 20)
+        backgroundModeAppView.backgroundColor = UIColor(red: 0.88, green: 0.95, blue: 0.94, alpha: 1.00)
         backgroundModeAutoView.roundCorners(with: 20)
+        backgroundModeAutoView.backgroundColor = UIColor(red: 0.88, green: 0.95, blue: 0.94, alpha: 1.00)
         backgroundParametersView.roundCorners(with: 20)
+        backgroundParametersView.backgroundColor = UIColor(red: 0.88, green: 0.95, blue: 0.94, alpha: 1.00)
     }
 
     private func initDataModeFirebase() {

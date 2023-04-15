@@ -35,6 +35,7 @@ class FanViewController: BaseViewController {
     override func configSubViews() {
         backgroundTimeoutView.roundCorners(with: 15)
         fanConfigButton.roundCorners(with: fanConfigButton.frame.size.height / 2)
+        backgroundTimeoutView.backgroundColor = UIColor(red: 0.88, green: 0.95, blue: 0.94, alpha: 1.00)
     }
 
     @IBAction func touchUpInsideFanConfigButton(_ sender: Any) {

@@ -57,7 +57,9 @@ class LampViewController: BaseViewController {
 
     override func configSubViews() {
         backgroundTimeoutView.roundCorners(with: 15)
+        backgroundTimeoutView.backgroundColor = UIColor(red: 0.88, green: 0.95, blue: 0.94, alpha: 1.00)
         backgroundSliderView.roundCorners(with: 15)
+        backgroundSliderView.backgroundColor = UIColor(red: 0.88, green: 0.95, blue: 0.94, alpha: 1.00)
         pumpConfigButton.roundCorners(with: pumpConfigButton.frame.size.height / 2)
     }
 

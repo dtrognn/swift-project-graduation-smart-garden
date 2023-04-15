@@ -14,10 +14,27 @@ class TemperatureViewController: BaseViewController {
     private var timeTitle: [String] = []
     private var tempData: [String] = []
 
+    private let userDefaults = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initData()
         initDataFirebase()
+    }
+
+    private func initData() {
+        if let savedData = userDefaults.array(forKey: "tempData") as? [String] {
+            tempData = savedData
+        }
+        if let savedTime = userDefaults.array(forKey: "timeTitle") as? [String] {
+            timeTitle = savedTime
+        }
+    }
+
+    private func saveData() {
+        userDefaults.set(tempData, forKey: "tempData")
+        userDefaults.set(timeTitle, forKey: "timeTitle")
     }
 
     private func initDataFirebase() {
@@ -35,6 +52,8 @@ class TemperatureViewController: BaseViewController {
                 }
 
                 self?.createLineChart(self!.timeTitle, self!.tempData)
+
+                self?.saveData()
             case .failure(let error):
                 self?.handleReadDataFailed(error)
             }

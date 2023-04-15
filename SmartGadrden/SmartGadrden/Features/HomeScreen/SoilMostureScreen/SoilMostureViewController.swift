@@ -11,13 +11,29 @@ import UIKit
 class SoilMostureViewController: BaseViewController {
     @IBOutlet var lineChart: LineChartView!
 
-    private var timeTitle: [String] = []
+    private var timeSoilMostureTitle: [String] = []
     private var soilMostureData: [String] = []
+
+    private let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initDataFirebase()
+    }
+
+    private func initData() {
+        if let savedData = userDefaults.array(forKey: "soilMostureData") as? [String] {
+            soilMostureData = savedData
+        }
+        if let savedTime = userDefaults.array(forKey: "timeSoilMostureTitle") as? [String] {
+            timeSoilMostureTitle = savedTime
+        }
+    }
+
+    private func saveData() {
+        userDefaults.set(soilMostureData, forKey: "soilMostureData")
+        userDefaults.set(timeSoilMostureTitle, forKey: "timeSoilMostureTitle")
     }
 
     private func initDataFirebase() {
@@ -30,11 +46,15 @@ class SoilMostureViewController: BaseViewController {
 
                 self?.appendTemperature(temp, self!.getCurrentDateTime())
 
-                if self!.soilMostureData.count > 7, self!.timeTitle.count > 7 {
+                if let soilMostureData = self?.soilMostureData, let timeSoilMostureTitle = self?.timeSoilMostureTitle,
+                   soilMostureData.count > 7, timeSoilMostureTitle.count > 7
+                {
                     self?.removeFirst()
                 }
 
-                self?.createLineChart(self!.timeTitle, self!.soilMostureData)
+                self?.createLineChart(self!.timeSoilMostureTitle, self!.soilMostureData)
+
+                self?.saveData()
             case .failure(let error):
                 self?.handleReadDataFailed(error)
             }
@@ -50,12 +70,12 @@ class SoilMostureViewController: BaseViewController {
 
     private func appendTemperature(_ data: String, _ title: String) {
         soilMostureData.append(data)
-        timeTitle.append(title)
+        timeSoilMostureTitle.append(title)
     }
 
     private func removeFirst() {
         soilMostureData.removeFirst()
-        timeTitle.removeFirst()
+        timeSoilMostureTitle.removeFirst()
     }
 
     private func createLineChart(_ timeTitle: [String], _ values: [String]) {

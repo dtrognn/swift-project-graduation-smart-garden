@@ -54,8 +54,7 @@ class HomeViewController: BaseViewController {
             switch result {
             case .success(let data):
                 let rainCode = "\(data.suffix(1))"
-                print(data)
-                print("raincode: ", rainCode)
+                
                 self?.applyRainState(rainCode)
             case .failure(let error):
                 self?.handleReadDataFailed(error)

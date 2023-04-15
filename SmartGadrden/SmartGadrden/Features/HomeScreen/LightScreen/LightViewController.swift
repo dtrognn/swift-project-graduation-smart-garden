@@ -11,13 +11,29 @@ import UIKit
 class LightViewController: BaseViewController {
     @IBOutlet var lineChart: LineChartView!
 
-    private var timeTitle: [String] = []
+    private var timeLightTitle: [String] = []
     private var lightData: [String] = []
+
+    private let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initDataFirebase()
+    }
+
+    private func initData() {
+        if let savedData = userDefaults.array(forKey: "lightData") as? [String] {
+            lightData = savedData
+        }
+        if let savedTime = userDefaults.array(forKey: "timeLightTitle") as? [String] {
+            timeLightTitle = savedTime
+        }
+    }
+
+    private func saveData() {
+        userDefaults.set(lightData, forKey: "lightData")
+        userDefaults.set(timeLightTitle, forKey: "timeLightTitle")
     }
 
     private func initDataFirebase() {
@@ -30,11 +46,15 @@ class LightViewController: BaseViewController {
 
                 self?.appendTemperature(temp, self!.getCurrentDateTime())
 
-                if self!.lightData.count > 7, self!.timeTitle.count > 7 {
+                if let lightData = self?.lightData, let timeLightTitle = self?.timeLightTitle,
+                   lightData.count > 7, timeLightTitle.count > 7
+                {
                     self?.removeFirst()
                 }
 
-                self?.createLineChart(self!.timeTitle, self!.lightData)
+                self?.createLineChart(self!.timeLightTitle, self!.lightData)
+
+                self?.saveData()
             case .failure(let error):
                 self?.handleReadDataFailed(error)
             }
@@ -50,12 +70,12 @@ class LightViewController: BaseViewController {
 
     private func appendTemperature(_ data: String, _ title: String) {
         lightData.append(data)
-        timeTitle.append(title)
+        timeLightTitle.append(title)
     }
 
     private func removeFirst() {
         lightData.removeFirst()
-        timeTitle.removeFirst()
+        timeLightTitle.removeFirst()
     }
 
     private func createLineChart(_ timeTitle: [String], _ values: [String]) {

@@ -11,13 +11,30 @@ import UIKit
 class HumidityViewController: BaseViewController {
     @IBOutlet var lineChart: LineChartView!
 
-    private var timeTitle: [String] = []
+    private var timeHumidityTitle: [String] = []
     private var humidityData: [String] = []
+
+    private let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initData()
         initDataFirebase()
+    }
+
+    private func initData() {
+        if let savedData = userDefaults.array(forKey: "humidityData") as? [String] {
+            humidityData = savedData
+        }
+        if let savedTime = userDefaults.array(forKey: "timeHumidityTitle") as? [String] {
+            timeHumidityTitle = savedTime
+        }
+    }
+
+    private func saveData() {
+        userDefaults.set(humidityData, forKey: "humidityData")
+        userDefaults.set(timeHumidityTitle, forKey: "timeHumidityTitle")
     }
 
     private func initDataFirebase() {
@@ -30,11 +47,15 @@ class HumidityViewController: BaseViewController {
 
                 self?.appendTemperature(temp, self!.getCurrentDateTime())
 
-                if self!.humidityData.count > 7, self!.timeTitle.count > 7 {
+                if let humidityData = self?.humidityData, let timeHumidityTitle = self?.timeHumidityTitle,
+                   humidityData.count > 7, timeHumidityTitle.count > 7
+                {
                     self?.removeFirst()
                 }
 
-                self?.createLineChart(self!.timeTitle, self!.humidityData)
+                self?.createLineChart(self!.timeHumidityTitle, self!.humidityData)
+
+                self?.saveData()
             case .failure(let error):
                 self?.handleReadDataFailed(error)
             }
@@ -50,12 +71,12 @@ class HumidityViewController: BaseViewController {
 
     private func appendTemperature(_ data: String, _ title: String) {
         humidityData.append(data)
-        timeTitle.append(title)
+        timeHumidityTitle.append(title)
     }
 
     private func removeFirst() {
         humidityData.removeFirst()
-        timeTitle.removeFirst()
+        timeHumidityTitle.removeFirst()
     }
 
     private func createLineChart(_ timeTitle: [String], _ values: [String]) {
@@ -71,7 +92,7 @@ class HumidityViewController: BaseViewController {
 
         let xAxis = lineChart.xAxis
         xAxis.valueFormatter = IndexAxisValueFormatter(values: timeTitle.suffix(7))
-        xAxis.labelCount = 7
+//        xAxis.labelCount = 7
         xAxis.granularity = 1
 
         xAxis.axisMinimum = -0.3

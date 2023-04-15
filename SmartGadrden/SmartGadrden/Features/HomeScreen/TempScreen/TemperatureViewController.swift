@@ -44,10 +44,11 @@ class TemperatureViewController: BaseViewController {
             switch result {
             case .success(let data):
                 let temp = "\(data.prefix(2))"
-
                 self?.appendTemperature(temp, self!.getCurrentDateTime())
 
-                if self!.tempData.count > 7, self!.timeTitle.count > 7 {
+                if let tempData = self?.tempData, let timeTitle = self?.timeTitle,
+                   tempData.count > 7, timeTitle.count > 7
+                {
                     self?.removeFirst()
                 }
 
@@ -68,8 +69,15 @@ class TemperatureViewController: BaseViewController {
     }
 
     private func appendTemperature(_ data: String, _ title: String) {
-        tempData.append(data)
-        timeTitle.append(title)
+        guard let lastTemp = tempData.last else {
+            tempData.append(data)
+            timeTitle.append(title)
+            return
+        }
+        if lastTemp != data {
+            tempData.append(data)
+            timeTitle.append(title)
+        }
     }
 
     private func removeFirst() {
@@ -90,7 +98,7 @@ class TemperatureViewController: BaseViewController {
 
         let xAxis = lineChart.xAxis
         xAxis.valueFormatter = IndexAxisValueFormatter(values: timeTitle.suffix(7))
-        xAxis.labelCount = 7
+//        xAxis.labelCount = 7
         xAxis.granularity = 1
 
         xAxis.axisMinimum = -0.3

@@ -13,6 +13,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet var cityLabel: UILabel!
     @IBOutlet var countryLabel: UILabel!
     @IBOutlet var temperatureLabel: UILabel!
+    @IBOutlet var rainStateImaveView: UIImageView!
 
     @IBOutlet var weatherCollectionView: UICollectionView!
 
@@ -33,6 +34,7 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
 
         initDataFirebase()
+        initDataRaintState()
 
         fetchDataFromAPI()
 
@@ -41,11 +43,35 @@ class HomeViewController: BaseViewController {
 
     override func configSubViews() {
         backgroundWeatherView.roundCorners(with: 20)
+        backgroundWeatherView.backgroundColor = UIColor(red: 0.88, green: 0.95, blue: 0.94, alpha: 1.00)
     }
 
     // MARK: - initDataFirebase
 
-    func initDataFirebase() {
+    private func initDataRaintState() {
+        fetchDataFromFirebase(atPath: "DULIEUCAMBIEN", dataType: String.self) { [weak self] result in
+            self?.displayIndicator(isShow: false)
+            switch result {
+            case .success(let data):
+                let rainCode = "\(data.suffix(1))"
+                print(data)
+                print("raincode: ", rainCode)
+                self?.applyRainState(rainCode)
+            case .failure(let error):
+                self?.handleReadDataFailed(error)
+            }
+        }
+    }
+
+    private func applyRainState(_ data: String) {
+        if data == "1" {
+            rainStateImaveView.image = UIImage(named: "weather")
+        } else {
+            rainStateImaveView.image = UIImage(named: "rain")
+        }
+    }
+
+    private func initDataFirebase() {
         displayIndicator(isShow: true)
         fetchDataFromFirebase(atPath: "DULIEUCAMBIEN", dataType: String.self) { [weak self] result in
             self?.displayIndicator(isShow: false)

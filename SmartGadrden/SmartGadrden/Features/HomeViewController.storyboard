@@ -581,6 +581,7 @@
                         <outlet property="backgroundWeatherView" destination="mKq-M1-tcO" id="JSn-PS-6vl"/>
                         <outlet property="cityLabel" destination="HbZ-rC-sEb" id="Ijc-MI-BR3"/>
                         <outlet property="countryLabel" destination="z2d-Rz-pzc" id="JCU-pb-eCt"/>
+                        <outlet property="rainStateImaveView" destination="Vaa-nT-2P7" id="6lx-ck-1jY"/>
                         <outlet property="temperatureLabel" destination="ZcC-Vl-lPb" id="Vv0-GJ-ncL"/>
                         <outlet property="weatherCollectionView" destination="f78-VS-L4Q" id="aXV-qo-3Bo"/>
                     </connections>
@@ -678,9 +679,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" itemPositioning="centered" itemSpacing="0.0" itemWidth="0.0" id="o49-gj-K16">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.16470588235294117" green="0.61568627450980395" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.082352941176470587" green="0.59607843137254901" blue="0.58431372549019611" alpha="0.0" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="0.39511710410000001" green="0.77385050060000005" blue="0.56070190669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="SCt-sC-TvX" kind="relationship" relationship="viewControllers" id="u1C-aT-2ZU"/>
@@ -1119,7 +1120,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ánh sáng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA8-ii-HCe">
-                                                <rect key="frame" x="151.66666666666666" y="5" width="89.666666666666657" height="30"/>
+                                                <rect key="frame" x="151.66666666666663" y="5" width="89.666666666666686" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="mdk-B1-xuG"/>
                                                 </constraints>

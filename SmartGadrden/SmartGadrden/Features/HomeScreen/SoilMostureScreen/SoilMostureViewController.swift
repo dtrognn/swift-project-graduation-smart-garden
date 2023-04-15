@@ -19,6 +19,7 @@ class SoilMostureViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initData()
         initDataFirebase()
     }
 
@@ -69,8 +70,18 @@ class SoilMostureViewController: BaseViewController {
     }
 
     private func appendTemperature(_ data: String, _ title: String) {
-        soilMostureData.append(data)
-        timeSoilMostureTitle.append(title)
+//        soilMostureData.append(data)
+//        timeSoilMostureTitle.append(title)
+
+        guard let lastTemp = soilMostureData.last else {
+            soilMostureData.append(data)
+            timeSoilMostureTitle.append(title)
+            return
+        }
+        if lastTemp != data {
+            soilMostureData.append(data)
+            timeSoilMostureTitle.append(title)
+        }
     }
 
     private func removeFirst() {

@@ -19,6 +19,7 @@ class LightViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initData()
         initDataFirebase()
     }
 
@@ -69,8 +70,15 @@ class LightViewController: BaseViewController {
     }
 
     private func appendTemperature(_ data: String, _ title: String) {
-        lightData.append(data)
-        timeLightTitle.append(title)
+        guard let lastTemp = lightData.last else {
+            lightData.append(data)
+            timeLightTitle.append(title)
+            return
+        }
+        if lastTemp != data {
+            lightData.append(data)
+            timeLightTitle.append(title)
+        }
     }
 
     private func removeFirst() {

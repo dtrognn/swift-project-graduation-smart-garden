@@ -70,8 +70,18 @@ class HumidityViewController: BaseViewController {
     }
 
     private func appendTemperature(_ data: String, _ title: String) {
-        humidityData.append(data)
-        timeHumidityTitle.append(title)
+//        humidityData.append(data)
+//        timeHumidityTitle.append(title)
+
+        guard let lastTemp = humidityData.last else {
+            humidityData.append(data)
+            timeHumidityTitle.append(title)
+            return
+        }
+        if lastTemp != data {
+            humidityData.append(data)
+            timeHumidityTitle.append(title)
+        }
     }
 
     private func removeFirst() {

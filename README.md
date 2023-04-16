@@ -1,6 +1,6 @@
 # Smart Garden App
 
-> This is a graduate project in Computer Engineering
+> This is a graduate project majoring in Computer Engineering, an IoT project that monitors and controls hardware through software. 
 
 - The main functions of the App:
     - Monitor the parameters of *temperature*, *humidity*, *soil moisture* and *light* in the garden 

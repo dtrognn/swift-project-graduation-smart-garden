@@ -17,8 +17,8 @@ class ConfigViewController: BaseViewController {
     @IBOutlet var configCollectionView: UICollectionView!
 
     private let numberOfItemInRow: CGFloat = 1
-    private let cellPaddingLeft: CGFloat = 20
-    private let cellPaddingRight: CGFloat = 20
+    private let cellPaddingLeft: CGFloat = 40
+    private let cellPaddingRight: CGFloat = 40
     private let minimumLineSpacingForSectionAt: CGFloat = 20
 
     override func viewDidLoad() {

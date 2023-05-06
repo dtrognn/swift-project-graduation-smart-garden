@@ -80,7 +80,7 @@ class SettingViewController: BaseViewController {
         }
     }
 
-    // MARK: -
+    // MARK: - listenSwitchStatusChanged
 
     private func listenSwitchStatusChanged() {
         buttonControlModeSwitch.addTarget(self, action: #selector(switchChanged(_:)), for: .valueChanged)
@@ -222,6 +222,6 @@ class SettingViewController: BaseViewController {
 
     private func handleInvalidTextField() {
         let dismissAction = UIAlertAction(title: "Đóng", style: .default)
-        showAlert(title: "Lỗi", message: "Các thông số ngưỡng không được để trống", actions: [dismissAction])
+        showAlert(title: "Lỗi", message: "Các thông số ngưỡng không hợp lệ", actions: [dismissAction])
     }
 }

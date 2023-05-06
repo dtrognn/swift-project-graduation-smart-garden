@@ -63,7 +63,7 @@ class HomeViewController: BaseViewController {
     }
 
     private func applyRainState(_ data: String) {
-        if data == "1" {
+        if data == "0" {
             rainStateImaveView.image = UIImage(named: "weather")
         } else {
             rainStateImaveView.image = UIImage(named: "rain")

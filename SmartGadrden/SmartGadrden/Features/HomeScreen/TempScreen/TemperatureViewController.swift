@@ -98,7 +98,6 @@ class TemperatureViewController: BaseViewController {
 
         let xAxis = lineChart.xAxis
         xAxis.valueFormatter = IndexAxisValueFormatter(values: timeTitle.suffix(7))
-//        xAxis.labelCount = 7
         xAxis.granularity = 1
 
         xAxis.axisMinimum = -0.3

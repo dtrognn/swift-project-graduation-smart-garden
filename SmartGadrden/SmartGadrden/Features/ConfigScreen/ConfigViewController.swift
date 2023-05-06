@@ -84,7 +84,6 @@ class ConfigViewController: BaseViewController {
 
 extension ConfigViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
         switch indexPath.row {
         case 0:
             let canopyVC = storyboard?.instantiateViewController(withIdentifier: "CanopyViewController") as! CanopyViewController
@@ -141,6 +140,7 @@ extension ConfigViewController: UICollectionViewDataSource {
     // replaceSubRange: replace part of this string with another string
     // example: default string A: 0000, after func replaceSubRange, string A: 0001
     private func handleSwitchChanged(_ indexPath: Int, _ isOn: Bool) {
+        let oldValue = engineStates.first ?? "0"
         switch indexPath {
         case 0:
             engineStates.replaceSubrange(engineStates.index(engineStates.endIndex, offsetBy: -1)..<engineStates.endIndex, with: isOn ? "1" : "0")
@@ -150,6 +150,18 @@ extension ConfigViewController: UICollectionViewDataSource {
             engineStates.replaceSubrange(engineStates.index(engineStates.endIndex, offsetBy: -3)..<engineStates.index(engineStates.endIndex, offsetBy: -2), with: isOn ? "1" : "0")
         default:
             engineStates.replaceSubrange(engineStates.startIndex..<engineStates.index(engineStates.endIndex, offsetBy: -3), with: isOn ? "1" : "0")
+        }
+
+        let newValue = engineStates.first ?? "0"
+        if oldValue == "0" && newValue == "1" {
+            writeDataToFirebase("pumpSpeed", "1") { [weak self] result in
+                switch result {
+                case .success:
+                    print(Self.self, #function)
+                case .failure(let error):
+                    self?.handleWriteDataFailed(error)
+                }
+            }
         }
 
         configCollectionView.reloadItems(at: [IndexPath(row: indexPath, section: 0)])

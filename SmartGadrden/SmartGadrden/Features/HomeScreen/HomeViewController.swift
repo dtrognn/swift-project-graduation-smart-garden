@@ -64,7 +64,7 @@ class HomeViewController: BaseViewController {
 
     private func applyRainState(_ data: String) {
         if data == "0" {
-            rainStateImaveView.image = UIImage(named: "weather")
+            rainStateImaveView.image = UIImage(named: "sun-cloud")
         } else {
             rainStateImaveView.image = UIImage(named: "rain")
         }
@@ -97,7 +97,7 @@ class HomeViewController: BaseViewController {
         print("Error: \(error.localizedDescription)")
 
         let cancelAction = UIAlertAction(title: "Đóng", style: .destructive)
-        showAlert(title: "Lỗi", message: "Lấy dữ liệu không thành công", actions: [cancelAction])
+        showAlert(title: "Mất kết nối", message: "", actions: [cancelAction])
     }
 
     // MARK: - configCollectionView

@@ -85,9 +85,6 @@ class ConfigViewController: BaseViewController {
 extension ConfigViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 0:
-            let canopyVC = storyboard?.instantiateViewController(withIdentifier: "CanopyViewController") as! CanopyViewController
-            present(canopyVC, animated: true)
         case 1:
             let bulbVC = storyboard?.instantiateViewController(withIdentifier: "BulbViewController") as! BulbViewController
             present(bulbVC, animated: true)
